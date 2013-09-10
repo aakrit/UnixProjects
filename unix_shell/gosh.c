@@ -74,7 +74,7 @@ int print_command(struct command_t *cmd, const char *tag) {
   }
   return(0);
 }
-/* Problem 1: read input from stdin and split it up by " " characters.
+/* read input from stdin and split it up by " " characters.
    Store the pieces in the passed in cmd_a->args[] array.  If the user
    inputs 'exit', return a 1.  If the user inputs nothing (\n), return
    a value > 1.  If the user inputs somthing else, return a 0. */
@@ -157,7 +157,6 @@ int simple_fork_command(struct command_t *cmd)
 		{ printf("\n"); }
 		else
 		{
-//			printf("The parent pid is %d\n", getpid());
 			if ((child = fork()) == 0)
 			{
 //			printf("C: In the child process, child pid is %d\n", getpid());
