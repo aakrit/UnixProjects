@@ -1,0 +1,46 @@
+Script started on Sat 02 Feb 2013 04:24:04 PM CST
+bash: //umask: No such file or directory
+aakrit@fullerton:~/cspp51081/labs/lab4$ mysig[K[K[K[K[Krm mysig
+aakrit@fullerton:~/cspp51081/labs/lab4$ ls
+makefile  mysig.c  mysig_test
+aakrit@fullerton:~/cspp51081/labs/lab4$ make
+gcc -g -Wall -c mysig.c
+mysig.c: In function ‘main’:
+mysig.c:59:1: warning: control reaches end of non-void function [-Wreturn-type]
+gcc -g -Wall -o mysig mysig.o
+rm *.o
+aakrit@fullerton:~/cspp51081/labs/lab4$ ls
+makefile  [0m[01;32mmysig[0m  mysig.c  mysig_test
+aakrit@fullerton:~/cspp51081/labs/lab4$ mysig 5
+the id of this process is: 5337
+Press CTRL+C so i do something
+Press CTRL+C so i do something
+^CYou have typed CTRL+C 1 times
+ Can't you tell i'm invulnerable? 
+Press CTRL+C so i do something
+^CYou have typed CTRL+C 2 times
+ Can't you tell i'm invulnerable? 
+Press CTRL+C so i do something
+Press CTRL+C so i do something
+^CYou have typed CTRL+C 3 times
+ Can't you tell i'm invulnerable? 
+Press CTRL+C so i do something
+Press CTRL+C so i do something
+Press CTRL+C so i do something
+Press CTRL+C so i do something
+Thank you for the kill -10 sigusr1 signal, keep working: User defined signal 1
+Press CTRL+C so i do something
+Thank you for the kill -10 sigusr1 signal, keep working: User defined signal 1
+Press CTRL+C so i do something
+Thank you for the kill -10 sigusr1 signal, keep working: User defined signal 1
+Press CTRL+C so i do something
+^CYou have typed CTRL+C 4 times
+ Can't you tell i'm invulnerable? 
+Press CTRL+C so i do something
+Press CTRL+C so i do something
+^Caakrit@fullerton:~/cspp51081/labs/lab4$ echo AS EXPECTED
+AS EXPECTED
+aakrit@fullerton:~/cspp51081/labs/lab4$ exit
+exit
+
+Script done on Sat 02 Feb 2013 04:25:03 PM CST
