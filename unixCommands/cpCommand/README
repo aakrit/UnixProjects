@@ -1,0 +1,17 @@
+
+This filecopy program can be created using "make" command. Once the file is created it can be using to copy one file to another, similar to the Unix 'cp' command by typeing: filecopy test_filecopy test2_filecopy.  
+
+In this case, for example, the filecopy program will copy the contents of test_filecopy onto test2_filecopy and in doing so it will also check to see if the file test2_filecopy exist. If it doesn't exisit it will create the file and then use it to copy. 
+
+I have tested the following situations in addition to the basic copy command and observed the behaviour of the funtion as follows:
+
+- If zero arguments are supplied: error is returned
+- If only 1 argument is supplied: error is returned
+- If two arguments are supplied and both are regular files: no error
+- If more than two arugments are supplied: error is returned
+- If the target doesn't exist: it is created 
+- If the sourse doesn't exist: error is returned
+- If sourse or target is a symbolic link: it is treated as regular file
+- If source or targets a directory: error is returned
+
+This hence test all cases, as expected, in the assignment criteria 

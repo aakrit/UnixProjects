@@ -1,0 +1,73 @@
+lab1 - ex1
+The three files are labeled as follows: myfile hard_link soft_link
+
+The file 'myfile' is the orginal file that was created by touch
+
+The 'hard_link' file is a hardlink to the file 'myfile'. 
+A hardlink file is a file with a link to the location where
+the original file, in this case 'myfile' is linked. 
+A hardlink can also be considered a directory reference or
+another pointer to the orginal file. 
+From this we can see that making any change to the hardlink 
+file will also make a change to the orginal file. 
+To delete a file with hardlinks, all the hardlinks have to be
+deleted, deleting just the original file doesn't delete the 
+information in the file in the unix system if there is another 
+hardlink file to that orginal file that is not deleted.
+Hardlinks can only be created for files not directories(folders).
+Thus a hardlink file will have the same inode (a file indentifier)
+as the target file since the inode is unique to a file. 
+We can see this using the 'ls -il' command to see the inode of 
+all the files in the directory.
+
+
+The 'soft_link' file is a softlink to the file 'myfile'. 
+
+A softlink (also referred to as a symbolic link) can also
+be thought of as a pointer to the orginal file and it shows up 
+on the list files command 'ls -l' indicating the target file with
+a '->'. The softlink file, however, will have a different inode 
+since it is a different file containing information about the 
+destination of the orginal (target) file.  
+We can see this when we use the 'ls -il' command to see the inode of
+all the files in the directory. 
+A softlink can also be thought of as a shortcut to the orginal 
+unix file as you would in windows OS.  
+A softlink can be created for files and directories (folders).
+If you delete/remove the orginal file, then the softlink files 
+points to nothing with no infomation.
+
+
+Unix Command: ls
+Typing this command will list all the files in the current directory
+In addition to listing the files this command can be supplied additional arguments to list more information about a file. 
+By placing a '-l' after the 'ls' command will list the file permissions of each file, owner, size, and creation date. 
+The '-i'will list the files with their unix file indentification number called the inode.
+The '-a' will list any hidden files in the folder as there files are starting with a '.' and don't show up with the 'ls' command.
+ls command can take multiple arguments at once, for example, we should type 'ls -ial' to get all the output otherwise only given by each of the arguments. 
+So thus we can use this command to note similarities and differences between the hardlink, softlink, and orginal files. We can see that the orginal file and the hardlink file will have the same inode number, same inode, same size, and same file permissions (unless otherwise altered). Moreover, since the size is reported for the same inode, the hardlink file won't occupy any extra space on the server. The softlink file and the orginal file, however, will have more differences. They will have different inode numbers, the softlink will have a "|" pipe symbol in the permissions column as well as different permission parameters. The size of the softlink file will be different as well than the target file. It will be much smaller. Also since the softlink has a different inode, its a different file and hence occupies addition space on the disk. The softlink will show up with the link to the target file when typeing 'ls -l' on the command prompt.
+
+
+
+Unix Command: stat
+The stat command is used to find out more information about a file. 
+stat will display information shown by 'ls -ila' inaddition to more information such as file UID, GID, blocks, IO Blocks, etc. 
+Running this commond on the 3 files we can see that the hardlink and target file have the same inode, permissions, size, blocks; however, the softlink file will have a smaller size, different incode, block, and a permission code 777 meaning anyone can read, write, or execute file. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

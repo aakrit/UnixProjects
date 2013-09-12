@@ -1,0 +1,25 @@
+Aakrit Prasad
+
+The Semaphore is used to lock the critical section in this program.
+
+The Critical section is when the value of the shared memory is being writen (possibly by different programs)
+
+For the producer file, the critical section is when we want to add an item on the shelf (increment int integer stored in shared memory)
+
+
+For the consumer file, the critical section is when we want to remove an item on the shelf (increment int integer stored in shared memory)
+
+The semaphore is locked before any process enters any of these sections and is removed (unlocked) after that respective process leave the section
+
+At the end the semaphore is deleted
+
+There is a small chance of deallock happening here as I was not able to effectivily program about it (given the time and sophistication of the issue as presented)
+
+To run both programs type 'make' to create them
+
+To run the producer program simply type 'producer'
+To run the consumer program simply type 'consumer'
+
+Then follow the commands provided by the program to use it
+
+Thank you

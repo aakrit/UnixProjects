@@ -1,0 +1,63 @@
+Script started on Sun 03 Feb 2013 11:26:23 AM CST
+
+
+First I created in excutable file using make from the Makefile created
+
+aakrit@rockwell:~/cspp51081/labs/lab3/ex1$ make
+gcc -g -Wall -c mystat.c
+mystat.c: In function ‘main’:
+mystat.c:50:9: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘__off_t’ [-Wformat]
+mystat.c:50:9: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘__blkcnt_t’ [-Wformat]
+mystat.c:50:9: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘__blksize_t’ [-Wformat]
+mystat.c:61:9: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘__dev_t’ [-Wformat]
+mystat.c:61:9: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘__dev_t’ [-Wformat]
+mystat.c:97:1: warning: control reaches end of non-void function [-Wreturn-type]
+gcc -g -Wall -o mystat mystat.o
+rm *.o
+
+
+Then I can list the files to show that the excutable file was correctly created
+
+aakrit@rockwell:~/cspp51081/labs/lab3/ex1$ ls
+Makefile  [0m[01;32mmystat[0m  mystat.c  README  test_stat_function_file
+
+
+
+Next I will test my fucntion on some test file and compare it to the UNIX stat function
+
+MyStat Function:
+
+aakrit@rockwell:~/cspp51081/labs/lab3/ex1$ mystat test_stat_function_file
+   File:  'test_stat_function_file'
+  Size:  80       Blocks: 8          IO Block: 65536       regular file
+Device:  19h/25d    Inode:  2968     Links:    1
+Access:  (0600/-rw-------)     Uid:  (10039/   aakrit)   Gid: (13000/  cppcs)
+Access:  2013-02-03 11:19:44 -0600
+Modify:  2013-02-03 11:19:44 -0600
+Change:  1978-07-29 15:10:00 -0500
+
+
+Unix Stat Function
+
+aakrit@rockwell:~/cspp51081/labs/lab3/ex1$ stat test_stat_function_file
+  File: `test_stat_function_file'
+  Size: 80        	Blocks: 8          IO Block: 65536  regular file
+Device: 19h/25d	Inode: 2968        Links: 1
+Access: (0600/-rw-------)  Uid: (10039/  aakrit)   Gid: (13000/   cppcs)
+Access: 2013-02-03 11:19:44.269589000 -0600
+Modify: 2013-02-03 11:19:44.270589000 -0600
+Change: 2013-02-03 11:19:44.270591000 -0600
+
+
+As we can see the output is exactly the same, hence mystat function is working as expected.
+
+This is great!
+
+
+
+
+
+
+exit
+
+Script done on Sun 03 Feb 2013 11:27:25 AM CST

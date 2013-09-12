@@ -1,0 +1,58 @@
+Script started on Sun 13 Jan 2013 01:21:22 AM CST
+bash: //umask: No such file or directory
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ umask 0022
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ umask
+0022
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ echo that was initial ma
+sk
+that was initial mask
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ echo to change u[Kmask we t
+ype
+to change mask we type
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ umask 0077
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ umask
+0077
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ touch new_umask_file
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ ls 0[K-l new_umask_file 
+-rw--w--w- 1 aakrit cppcs 0 2013-01-13 01:22 new_umask_file
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ echo lets check bashrc f
+ile to [K[K[Kfor umask peri[Kmissions
+lets check bashrc file for umask permissions
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ cd
+aakrit@rockwell:~$ cd ../..
+aakrit@rockwell:/$ echo now in root dir
+now in root dir
+aakrit@rockwell:/$ cd etc/bash.bashrc 
+bash: cd: etc/bash.bashrc: Not a directory
+aakrit@rockwell:/$ vi etc/bash.bashrc 
+7[?47h[27m[24m[0m[H[J[25;1H"etc/bash.bashrc" [readonly] 68L, 2025C[1;1H[1m[36m# installed via FAI
+
+# System-wide .bashrc file for interactive bash(1) shells.
+
+# To enable the settings / commands in this file for login shells as well,
+# this file has to be sourced in /etc/profile.
+
+# draconian umask[0m
+[1m[33mumask[0m [1m[35m077[0m
+
+[1m[36m# If not running interactively, don't do anything[0m
+[1m[33m[[0m [1m[33m-z[0m [1m[33m"[0m[1m[34m$PS1[0m[1m[33m"[0m [1m[33m][0m && [1m[33mreturn[0m
+
+[1m[36m# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.[0m
+[1m[33mshopt[0m [1m[31m-s[0m checkwinsize
+
+[1m[36m# set variable identifying the chroot you work in (used in the prompt below)[0m
+[1m[33mif [[0m [1m[33m-z[0m [1m[33m"[0m[1m[34m$debian_chroot[0m[1m[33m"[0m [1m[33m][0m [1m[33m&&[0m [1m[33m[[0m [1m[33m-r[0m /etc/debian_chroot [1m[33m];[0m [1m[33mthen[0m
+    [1m[36mdebian_chroot[0m=[1m[34m$([0m[1m[31mcat /etc/debian_chroot[0m[1m[34m)[0m
+[1m[33mfi[0m
+
+[1m[36m# set a fancy prompt (non-color, overwrite the one in /etc/profile)
+PS1[0m=[1m[33m'[0m[1m[35m${debian_chroot:+($debian_chroot)}\u@\h:\w\$ [0m[1m[33m'[0m[25;63H1,1[11CTop[1;1H[25;1H[K[25;1H:q[25;1H[K[25;1H[2J[?47l8aakrit@rockwell:/$ echo as we can see .bashrc has umask 0077
+as we can see .bashrc has umask 0077
+aakrit@rockwell:/$ echo which was just changed in the file using vim editor
+which was just changed in the file using vim editor
+aakrit@rockwell:/$ exit
+exit
+
+Script done on Sun 13 Jan 2013 01:28:07 AM CST

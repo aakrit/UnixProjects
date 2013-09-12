@@ -1,0 +1,361 @@
+lab1 - ex1
+The three files are labeled as follows: myfile hard_link soft_link
+
+The file 'myfile' is the orginal file that was created by touch
+
+The 'hard_link' file is a hardlink to the file 'myfile'. 
+A hardlink file is a file with a link to the location where
+the original file, in this case 'myfile' is linked. 
+A hardlink can also be considered a directory reference or
+another pointer to the orginal file. 
+From this we can see that making any change to the hardlink 
+file will also make a change to the orginal file. 
+To delete a file with hardlinks, all the hardlinks have to be
+deleted, deleting just the original file doesn't delete the 
+information in the file in the unix system if there is another 
+hardlink file to that orginal file that is not deleted.
+Hardlinks can only be created for files not directories(folders).
+Thus a hardlink file will have the same inode (a file indentifier)
+as the target file since the inode is unique to a file. 
+We can see this using the 'ls -il' command to see the inode of 
+all the files in the directory.
+
+
+The 'soft_link' file is a softlink to the file 'myfile'. 
+
+A softlink (also referred to as a symbolic link) can also
+be thought of as a pointer to the orginal file and it shows up 
+on the list files command 'ls -l' indicating the target file with
+a '->'. The softlink file, however, will have a different inode 
+since it is a different file containing information about the 
+destination of the orginal (target) file.  
+We can see this when we use the 'ls -il' command to see the inode of
+all the files in the directory. 
+A softlink can also be thought of as a shortcut to the orginal 
+unix file as you would in windows OS.  
+A softlink can be created for files and directories (folders).
+If you delete/remove the orginal file, then the softlink files 
+points to nothing with no infomation.
+
+
+Unix Command: ls
+Typing this command will list all the files in the current directory
+In addition to listing the files this command can be supplied additional arguments to list more information about a file. 
+By placing a '-l' after the 'ls' command will list the file permissions of each file, owner, size, and creation date. 
+The '-i'will list the files with their unix file indentification number called the inode.
+The '-a' will list any hidden files in the folder as there files are starting with a '.' and don't show up with the 'ls' command.
+ls command can take multiple arguments at once, for example, we should type 'ls -ial' to get all the output otherwise only given by each of the arguments. 
+So thus we can use this command to note similarities and differences between the hardlink, softlink, and orginal files. We can see that the orginal file and the hardlink file will have the same inode number, same inode, same size, and same file permissions (unless otherwise altered). Moreover, since the size is reported for the same inode, the hardlink file won't occupy any extra space on the server. The softlink file and the orginal file, however, will have more differences. They will have different inode numbers, the softlink will have a "|" pipe symbol in the permissions column as well as different permission parameters. The size of the softlink file will be different as well than the target file. It will be much smaller. Also since the softlink has a different inode, its a different file and hence occupies addition space on the disk. The softlink will show up with the link to the target file when typeing 'ls -l' on the command prompt.
+
+
+
+Unix Command: stat
+The stat command is used to find out more information about a file. 
+stat will display information shown by 'ls -ila' inaddition to more information such as file UID, GID, blocks, IO Blocks, etc. 
+Running this commond on the 3 files we can see that the hardlink and target file have the same inode, permissions, size, blocks; however, the softlink file will have a smaller size, different incode, block, and a permission code 777 meaning anyone can read, write, or execute file. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Script started on Sat 12 Jan 2013 07:49:57 PM CST
+bash: //umask: No such file or directory
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ ypcat passwd | gre
+p -i ":john"[K*" | wc -l
+36
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ exit[K[K[K[Kypcat passwd | gre
+p -i ":john*" | wc -l[1P
+35
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ exit
+exit
+
+Script done on Sat 12 Jan 2013 07:51:26 PM CST
+Script started on Sat 12 Jan 2013 07:48:08 PM CST
+bash: //umask: No such file or directory
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ lp[Kpq[Kqstat[K[K[K[K[Kstat
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ lpsta -a
+bash: lpsta: command not found
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ lpsta -a[1@t[C[1P -a[1P -aa -at -a
+_Select_a_printer_ accepting requests since Sat 12 Jan 2013 07:38:07 PM CST
+cr18 accepting requests since Mon 14 Feb 2011 02:19:21 PM CST
+eck2 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+eck2b accepting requests since Mon 02 Feb 2009 03:06:32 PM CST
+ry151 accepting requests since Fri 17 Aug 2012 03:39:38 PM CDT
+ry152a accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry155 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry160-hp4025 accepting requests since Sat 12 Jan 2013 07:38:07 PM CST
+ry160b accepting requests since Mon 02 Feb 2009 03:06:32 PM CST
+ry160b-3 accepting requests since Mon 02 Feb 2009 03:06:32 PM CST
+ry164 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry167 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry175 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry176 accepting requests since Wed 03 Feb 2010 09:51:28 AM CST
+ry177 accepting requests since Mon 02 Feb 2009 03:06:32 PM CST
+ry254 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry256 accepting requests since Mon 02 Feb 2009 03:06:32 PM CST
+ry257 accepting requests since Tue 11 Oct 2011 11:14:12 AM CDT
+ry259 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry275A accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry278 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry360 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry402 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+ry402-2 accepting requests since Mon 02 Feb 2009 03:06:33 PM CST
+scl217 accepting requests since Fri 30 Oct 2009 11:53:38 AM CDT
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ lpr -P ry254
+
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ lpq -P ry254
+ry254 is ready
+Rank    Owner   Job     File(s)                         Total Size
+1st     (null)  108     untitled                        0 bytes
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ exit
+exit
+
+Script done on Sat 12 Jan 2013 07:49:47 PM CST
+Script started on Sun 13 Jan 2013 01:21:22 AM CST
+bash: //umask: No such file or directory
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ umask 0022
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ umask
+0022
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ echo that was initial ma
+sk
+that was initial mask
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ echo to change u[Kmask we t
+ype
+to change mask we type
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ umask 0077
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ umask
+0077
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ touch new_umask_file
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ ls 0[K-l new_umask_file 
+-rw--w--w- 1 aakrit cppcs 0 2013-01-13 01:22 new_umask_file
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ echo lets check bashrc f
+ile to [K[K[Kfor umask peri[Kmissions
+lets check bashrc file for umask permissions
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ cd
+aakrit@rockwell:~$ cd ../..
+aakrit@rockwell:/$ echo now in root dir
+now in root dir
+aakrit@rockwell:/$ cd etc/bash.bashrc 
+bash: cd: etc/bash.bashrc: Not a directory
+aakrit@rockwell:/$ vi etc/bash.bashrc 
+7[?47h[27m[24m[0m[H[J[25;1H"etc/bash.bashrc" [readonly] 68L, 2025C[1;1H[1m[36m# installed via FAI
+
+# System-wide .bashrc file for interactive bash(1) shells.
+
+# To enable the settings / commands in this file for login shells as well,
+# this file has to be sourced in /etc/profile.
+
+# draconian umask[0m
+[1m[33mumask[0m [1m[35m077[0m
+
+[1m[36m# If not running interactively, don't do anything[0m
+[1m[33m[[0m [1m[33m-z[0m [1m[33m"[0m[1m[34m$PS1[0m[1m[33m"[0m [1m[33m][0m && [1m[33mreturn[0m
+
+[1m[36m# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.[0m
+[1m[33mshopt[0m [1m[31m-s[0m checkwinsize
+
+[1m[36m# set variable identifying the chroot you work in (used in the prompt below)[0m
+[1m[33mif [[0m [1m[33m-z[0m [1m[33m"[0m[1m[34m$debian_chroot[0m[1m[33m"[0m [1m[33m][0m [1m[33m&&[0m [1m[33m[[0m [1m[33m-r[0m /etc/debian_chroot [1m[33m];[0m [1m[33mthen[0m
+    [1m[36mdebian_chroot[0m=[1m[34m$([0m[1m[31mcat /etc/debian_chroot[0m[1m[34m)[0m
+[1m[33mfi[0m
+
+[1m[36m# set a fancy prompt (non-color, overwrite the one in /etc/profile)
+PS1[0m=[1m[33m'[0m[1m[35m${debian_chroot:+($debian_chroot)}\u@\h:\w\$ [0m[1m[33m'[0m[25;63H1,1[11CTop[1;1H[25;1H[K[25;1H:q[25;1H[K[25;1H[2J[?47l8aakrit@rockwell:/$ echo as we can see .bashrc has umask 0077
+as we can see .bashrc has umask 0077
+aakrit@rockwell:/$ echo which was just changed in the file using vim editor
+which was just changed in the file using vim editor
+aakrit@rockwell:/$ exit
+exit
+
+Script done on Sun 13 Jan 2013 01:28:07 AM CST
+Script started on Sun 13 Jan 2013 01:09:01 PM CST
+ps -bash: //umask: No such file or directory
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ ps -U root -u root -eo p
+id | egrep -v PID | tr "\n" "," | r -[K[K[Ktd[Kr -d " " | sed "/,$/s//\n/"
+1,2,3,6,7,9,11,13,14,16,17,18,19,21,22,23,24,25,26,27,29,30,31,32,33,34,35,43,195,198,203,222,224,246,249,250,254,255,300,307,318,321,322,378,381,393,404,435,438,473,484,600,656,662,668,669,733,741,775,817,841,927,940,941,997,1006,1023,1024,1026,1031,1097,1151,1226,1232,1241,1242,1245,1257,1262,1273,1283,1292,1293,1310,1342,1349,1354,1379,1382,1391,1496,1539,1564,1624,1659,1722,1766,1771,1798,1904,1939,1999,2046,2050,2056,2067,2172,2192,2294,2306,2318,2319,2335,2364,2367,2383,2385,2426,2467,2489,2495,2498,2512,2555,2635,2675,2713,2725,2726,2835,2937,2939,2962,3014,3155,3241,3248,3303,3344,3380,3514,3626,3689,3724,3781,3807,3913,4000,4069,4075,4098,4230,4336,4412,4466,4505,4513,4589,4709,4820,4824,4914,4921,5018,5057,5163,5206,5207,5214,5234,5237,5465,5578,5630,5684,5807,5949,5957,6021,6025,6062,6087,6102,6146,6248,6336,6361,6369,6427,6467,6581,6741,6753,6898,7083,7202,7208,7244,7263,7291,7428,7434,7435,7465,7504,7526,7540,7554,7570,7645,7880,7905,8112,8215,8344,8397,8463,8485,8486,8568,8596,8625,8647,8671,8682,8694,8701,8823,8860,9007,9097,9326,9348,9481,9585,9673,9679,9709,9727,9805,9816,9835,9855,9861,9867,10012,10040,10079,10135,10263,10477,10544,10621,10647,10779,10843,10857,10863,10892,10938,10945,10964,11026,11049,11085,11093,11233,11255,11265,11304,11428,11566,11572,11609,11741,11742,11760,11766,11979,11981,11983,11986,12056,12071,12075,12095,12115,12190,12233,12248,12255,12284,12301,12305,12368,12390,12418,12473,12590,12665,12704,12709,12739,12778,12779,12780,12900,12935,12945,12965,12966,12967,12983,13069,13116,13118,13121,13127,13128,13129,13130,13131,13173,13204,13225,13248,13323,13356,13487,13503,13513,13521,13528,13697,13836,13868,14047,14198,14247,14257,14362,14363,14382,14458,14539,14591,14614,14640,14718,14724,14725,14734,14914,14997,15032,15154,15200,15389,15397,15407,15495,15555,15558,15649,15747,15753,15762,15940,15952,15969,16124,16129,16197,16339,16451,16520,16539,16625,16633,16635,16699,16745,16838,16878,16887,16971,17153,17165,17168,17261,17346,17361,17479,17649,17676,17725,17782,17831,17851,17934,18006,18015,18032,18185,18286,18342,18384,18386,18399,18528,18562,18619,18779,18813,18912,18914,18964,19066,19123,19134,19142,19221,19403,19504,19526,19536,19611,19692,19764,19783,19915,19951,20047,20098,20106,20261,20280,20286,20322,20383,20412,20617,20655,20726,20835,20857,20894,20997,21046,21091,21131,21179,21230,21293,21389,21416,21501,21569,21603,21654,21813,21917,21944,22016,22033,22053,22179,22228,22312,22342,22345,22352,22365,22515,22544,22555,22729,22788,22796,22874,22875,22876,22885,22909,22943,23005,23111,23162,23173,23278,23312,23317,23329,23331,23332,23333,23348,23353,23354,23356,23363,23369,23370,23379,23389,23391,23392,23416,23418,23449,23496,23506,23641,23674,23898,24010,24020,24071,24139,24216,24263,24268,24314,24333,24436,24445,24572,24628,24717,24783,24805,25089,25198,25206,25209,25394,25431,25450,25519,25578,25602,25630,25744,25816,25845,25914,25980,26280,26282,26335,26371,26442,26648,26760,26770,26818,26842,26845,26887,27059,27101,27108,27164,27238,27471,27548,27629,27947,27996,28052,28128,28272,28356,28368,28381,28385,28387,28599,28816,29047,29126,29155,29265,29480,29513,29522,29565,29594,29600,29728,29780,30002,30263,30313,30474,30641,30656,30697,30747,30772,30844,30856,30996,31036,31472,31494,31655,31684,31770,31799,31913,31982,31984,32029,32198,32272,32637,32669
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ echo the fi[K[Kps command list
+ all the roots[K[K[K[K[Kroot processes, then i use egrep to remove 11[Kst line with info gi[Kiven by
+ ps, then i use tr to make each [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line with info given b
+[1@y[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca, then i use egrep to remove 1st line with info given 
+[1@b[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn, then i use egrep to remove 1st line with info given
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd, then i use egrep to remove 1st line with info give
+[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line with info giv
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci, then i use egrep to remove 1st line with info gi
+[1@v[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line with info g
+[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu, then i use egrep to remove 1st line with info 
+[1@g[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs, then i use egrep to remove 1st line with info
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce, then i use egrep to remove 1st line with inf
+[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line with in
+[1@f[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-, then i use egrep to remove 1st line with i
+[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce, then i use egrep to remove 1st line with 
+[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co, then i use egrep to remove 1st line with
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line wit
+[1@h[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp, then i use egrep to remove 1st line wi
+[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci, then i use egrep to remove 1st line w
+[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd, then i use egrep to remove 1st line 
+[1@w[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct, then i use egrep to remove 1st lin
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co, then i use egrep to remove 1st li
+[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st l
+[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co, then i use egrep to remove 1st 
+[1@l[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn, then i use egrep to remove 1st
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl, then i use egrep to remove 1s
+[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cy, then i use egrep to remove 1
+[1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 
+[1@1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr, then i use egrep to remove
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce, then i use egrep to remov
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct, then i use egrep to remo
+[1@v[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu, then i use egrep to rem
+[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr, then i use egrep to re
+[1@m[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn, then i use egrep to r
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to 
+[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci, then i use egrep to
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn, then i use egrep t
+[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cf, then i use egrep 
+[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co, then i use egrep
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr, then i use egre
+[1@p[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm, then i use egr
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca, then i use eg
+[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct, then i use e
+[1@g[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci, then i use 
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co, then i use
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn, then i us
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i u
+[1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci, then i 
+[1@u[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn, then i
+ use egrep to remove 1st line with info given by ps, then i use tr to make each
+ [A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then 
+i use egrep to remove 1st line with info given by ps, then i use tr to make eac
+h [A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CP, then
+ i use egrep to remove 1st line with info given by ps, then i use tr to make ea
+[1@c[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CI, the
+n i use egrep to remove 1st line with info given by ps, then i use tr to make e
+[1@a[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CD, th
+en i use egrep to remove 1st line with info given by ps, then i use tr to make 
+[1@e[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , t
+hen i use egrep to remove 1st line with info given by ps, then i use tr to make
+[1@ [A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc, 
+then i use egrep to remove 1st line with info given by ps, then i use tr to mak
+[1@e[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co,
+ then i use egrep to remove 1st line with info given by ps, then i use tr to ma
+[1@k[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl
+, then i use egrep to remove 1st line with info given by ps, then i use tr to m
+[1@a[Au, then i use egrep to remove 1st line with info given by ps, then i use tr to 
+[1@m[Am, then i use egrep to remove 1st line with info given by ps, then i use tr to
+[1@ [A[Cn, then i use egrep to remove 1st line with info given by ps, then i use tr t
+[1@o[A[C[C , then i use egrep to remove 1st line with info given by ps, then i use tr 
+[1@t[A[C[C[Cs, then i use egrep to remove 1st line with info given by ps, then i use tr
+[1@ [A[C[C[C[Ci, then i use egrep to remove 1st line with info given by ps, then i use t
+[1@r[A[C[C[C[C[Cn, then i use egrep to remove 1st line with info given by ps, then i use 
+[1@t[A[C[C[C[C[C[Cc, then i use egrep to remove 1st line with info given by ps, then i use
+[1@ [A[C[C[C[C[C[C[Ce, then i use egrep to remove 1st line with info given by ps, then i us
+[1@e[A[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line with info given by ps, then i u
+[1@s[A[C[C[C[C[C[C[C[C[Ci, then i use egrep to remove 1st line with info given by ps, then i 
+[1@u[A[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line with info given by ps, then i
+[1@ [A[C[C[C[C[C[C[C[C[C[C[Co, then i use egrep to remove 1st line with info given by ps, then 
+[1@i[A[C[C[C[C[C[C[C[C[C[C[C[Cn, then i use egrep to remove 1st line with info given by ps, then
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[Cl, then i use egrep to remove 1st line with info given by ps, the
+[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[Cy, then i use egrep to remove 1st line with info given by ps, th
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line with info given by ps, t
+[1@h[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cw, then i use egrep to remove 1st line with info given by ps, 
+[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca, then i use egrep to remove 1st line with info given by ps,
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn, then i use egrep to remove 1st line with info given by ps
+[1@,[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct, then i use egrep to remove 1st line with info given by p
+[1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line with info given by 
+[1@p[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct, then i use egrep to remove 1st line with info given by
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ch, then i use egrep to remove 1st line with info given b
+[1@y[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca, then i use egrep to remove 1st line with info given 
+[1@b[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct, then i use egrep to remove 1st line with info given
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C , then i use egrep to remove 1st line with info give
+[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn, then i use egrep to remove 1st line with info giv
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu, then i use egrep to remove 1st line with info gi
+[1@v[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm, then i use egrep to remove 1st line with info g
+[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cb, then i use egrep to remove 1st line with info 
+[1@g[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce, then i use egrep to remove 1st line with info
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr, then i use egrep to remove 1st line with inf
+[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C then i use egrep to remove 1st line with info
+[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C. then i use egrep to remove 1st line with inf
+[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chen i use egrep to remove 1st line with info
+[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CThen i use egrep to remove 1st line with inf
+[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C i use egrep to remove 1st line with in
+[1@f[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci i use egrep to remove 1st line with i
+[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C i use egrep to remove 1st line with 
+[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cw i use egrep to remove 1st line with
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C i use egrep to remove 1st line with 
+[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu i use egrep to remove 1st line with
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs i use egrep to remove 1st line wit
+[1@h[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce i use egrep to remove 1st line wi
+[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C i use egrep to remove 1st line w
+[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp i use egrep to remove 1st line 
+[1@w[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci i use egrep to remove 1st line
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp i use egrep to remove 1st lin
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce i use egrep to remove 1st li
+[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs i use egrep to remove 1st l
+[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C i use egrep to remove 1st 
+[1@l[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct i use egrep to remove 1st
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co i use egrep to remove 1s
+[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C i use egrep to remove 1
+[1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cf i use egrep to remove 
+[1@1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co i use egrep to remove
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr i use egrep to remov
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm i use egrep to remo
+[1@v[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca i use egrep to rem
+[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct i use egrep to re
+[1@m[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C i use egrep to r
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct i use egrep to 
+[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ch i use egrep to
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce i use egrep t
+[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C i use egrep 
+[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr i use egrep
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce i use egre
+[1@p[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct i use egr
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu i use eg
+[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr i use e
+[1@g[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn i use 
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce i use
+[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd i us
+[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C i u
+[1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs i 
+[1@u[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct i
+ use egrep to remove 1st line with info given by ps, then i use tr to make each
+ [A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr 
+i use egrep to remove 1st line with info given by ps, then i use tr to make eac
+h [A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci
+ i use egrep to remove 1st line with info given by ps, then i use tr to make ea
+[1@c[An i use egrep to remove 1st line with info given by ps, then i use tr to make e
+[1@a[Ag i use egrep to remove 1st line with info given by ps, then i use tr to make 
+[1@e[A[C. i use egrep to remove 1st line with info given by ps, then i use tr to make
+[1@ [A[C[C[C i use egrep to remove 1st line with info given by ps, then i use tr to mak
+[1@e[A[C[C[C[C[C use egrep to remove 1st line with info given by ps, then i use tr to make
+[1P[A[C[C[C[C[Cuse egrep to remove 1st line with info given by ps, then i use tr to make 
+[1P[A[C[C[C[Cuse egrep to remove 1st line with info given by ps, then i use tr to make e
+[1P[A[C[C[C[C use egrep to remove 1st line with info given by ps, then i use tr to make 
+[1@e[A[C[C[CI use egrep to remove 1st line with info given by ps, then i use tr to make
+[1@ [A[C[C[C[C[C use egrep to remove 1st line with info given by ps, then i use tr to mak
+[1@e[A[C[C[C[C[Cuse egrep to remove 1st line with info given by ps, then i use tr to make
+[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[Cnew line a comman[K to separe[Kae[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[Kto sepa
+rae ea[K[K[K[Kte each new line with a comma, then i use tr to remove all back spaces, and f
+inally i use sed to remove the appearance of the command promt [K[Kpt at the end of m
+y file[K[K[K[K[K PID string.
+the ps command list all the root processes and i use -eo pid to only return information in PID column since i only want that number. Then i use pipes to format the returned string. I use egrep to remove 1st line with info given by ps, then i use tr to separate each new line with a comma, then i use tr to remove all back spaces, and finally i use sed to remove the appearance of the command prompt at the end of my PID string.
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ exit
+exit
+
+Script done on Sun 13 Jan 2013 01:13:44 PM CST

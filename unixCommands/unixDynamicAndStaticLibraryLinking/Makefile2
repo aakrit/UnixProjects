@@ -1,0 +1,39 @@
+CC = gcc
+DYLIB = gcc
+
+OBJ_FILES = -fPIC -Wall -g -std=c99
+DYLIBFLAGS = -g -Wall -std=c99
+#the following is a SUFFIX RULE
+%.o: %.c
+	$(CC) $(OBJ_FILES) -c $<
+
+#the following are MACROS
+DYLINKING = -g -shared -Wl,-soname,$@.5
+MAIN_OBJS = main.o 
+REMOVE = rm -rf
+MAIN = main
+LIBS = -lc -L. -lmylib
+LIB_FILES = libmylib.so
+LIB_MINOR = $(LIB_FILES).5.1
+LIB_RELEASE = $(LIB_MINOR).10
+LIB_OBJS = hello.o here.o bye.o
+
+#the following is a TARGET
+all: $(LIB_FILES) $(MAIN)
+#all: $(LIB_FILES) 
+
+#create the library with this RULE:
+libmylib.so: hello.o here.o bye.o
+	$(DYLIB) $(DYLINKING) -o $(LIB_RELEASE) $? -lc
+	ln -sf $(LIB_RELEASE) $(LIB_MINOR)
+	ln -sf $(LIB_MINOR) $@.5
+	ln -sf $@.5 $@
+
+
+#create the MAINram with this RULE:
+$(MAIN) : $(MAIN_OBJS) $(LIB_FILES)
+	$(DYLIB) $(DYLIBFLAGS) $(MAIN_OBJS) $(LIB_FILES) -o $(MAIN)
+	DYLIB_LIBRARY_PATH=.
+#clean up the files with this RULE:
+clean:
+	$(REMOVE) $(MAIN_OBJS) $(LIB_OBJS) $(LIB_FILES) $(MAIN_OBJS) $(LIB_RELEASE) $(LIB_MINOR) libmylib.so.* *~

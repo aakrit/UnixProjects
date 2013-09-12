@@ -1,0 +1,14 @@
+
+
+mylib.a: hello.o here.o bye.o
+	ar r mylib.a hello.o here.o bye.o
+	rm *.o
+
+hello.o: hello.c
+	gcc -c -Wall hello.c
+
+here.o: here.c
+	gcc -c -Wall here.c
+
+bye.o: bye.c
+	gcc -c -Wall bye.c

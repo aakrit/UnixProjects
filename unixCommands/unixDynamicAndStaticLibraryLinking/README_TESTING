@@ -1,0 +1,38 @@
+Script started on Sun 03 Feb 2013 11:21:29 PM CST
+bash: //umask: No such file or directory
+aakrit@rockwell:~/cspp51081/labs/lab3/ex3$ ls
+bye.c    here.c  Makefile1  mylib.a  README
+hello.c  main.c  Makefile2  mylib.h  README_TESTING
+aakrit@rockwell:~/cspp51081/labs/lab3/ex3$ make -f Makefile1
+gcc -c -Wall hello.c
+gcc -c -Wall here.c
+gcc -c -Wall bye.c
+ar r mylib.a hello.o here.o bye.o
+rm *.o
+aakrit@rockwell:~/cspp51081/labs/lab3/ex3$ ls
+bye.c    here.c  Makefile1  mylib.a  README
+hello.c  main.c  Makefile2  mylib.h  README_TESTING
+aakrit@rockwell:~/cspp51081/labs/lab3/ex3$ make -f Makefile2
+gcc -fPIC -Wall -g -std=c99 -c hello.c
+gcc -fPIC -Wall -g -std=c99 -c here.c
+gcc -fPIC -Wall -g -std=c99 -c bye.c
+gcc -g -shared -Wl,-soname,libmylib.so.5 -o libmylib.so.5.1.10 hello.o here.o bye.o -lc
+ln -sf libmylib.so.5.1.10 libmylib.so.5.1
+ln -sf libmylib.so.5.1 libmylib.so.5
+ln -sf libmylib.so.5 libmylib.so
+gcc -fPIC -Wall -g -std=c99 -c main.c
+gcc -g -Wall -std=c99 main.o  libmylib.so -o main
+DYLIB_LIBRARY_PATH=.
+aakrit@rockwell:~/cspp51081/labs/lab3/ex3$ ls
+bye.c    here.c         [0m[01;36mlibmylib.so.5.1[0m     main.o     mylib.h
+bye.o    here.o         [01;32mlibmylib.so.5.1.10[0m  Makefile1  README
+hello.c  [01;36mlibmylib.so[0m    [01;32mmain[0m                Makefile2  README_TESTING
+hello.o  [01;36mlibmylib.so.5[0m  main.c              mylib.a
+aakrit@rockwell:~/cspp51081/labs/lab3/ex3$ lsmake -f Makefile2ls[Kmake -f Makefile1ls[Kexit[2Plsexitstat test_stat_function_file [2@my[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmakekill -10 5337make[K[2Plsmystat test_stat_function_file [2P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K[2Plsexit[2Plsmake -f Makefile1ls[Kmake -f Makefile2ls[K[KLD_LIBRARY_PATH=. ./main
+Hello!
+I am here!
+Bye!
+aakrit@rockwell:~/cspp51081/labs/lab3/ex3$ exit
+exit
+
+Script done on Sun 03 Feb 2013 11:22:29 PM CST

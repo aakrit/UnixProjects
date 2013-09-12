@@ -1,0 +1,23 @@
+
+Description of files/ programs: 
+
+File name: ex2.awk
+
+
+Program Description:
+
+The awk code contained in this file shows how to find the average rainfall for the month of January in the following states: CA, AK, TX.
+The file is executed running "awk -f ex2.awk normal.precipitate.txt" where the last argument is the name of the file that contains all the rainfall data and it is upto the awk script to filter the required data.
+
+The Awk file does this by first setting a field separator to be tab delmited "\t" from the default space field " ", since the assignment states that all fields are tab delimited in the txt file and we are only interested in the field that contains the name of the state and the rainfall for January. The next part of the file states the pattern (the reg expression to find the records with the field we are interested in) and the action to be performed once that pattern is found. In this case we want to sum all the values of the rain and keep a record of the number of fields with the state. We do this for each of the three states. then we simple (in an END block after the script is processed all the records) print out the average rainfall in Jan for each state by dividing the sum by the total records processed.
+
+
+
+
+
+File name: ex1.awk
+
+
+Program Description:
+
+This awk file is similar to ex2.awk but has more flexibility and easier for the user. Only three arguments are need: the file name (ex1.awk), the state, and the month ie: "ex1.awk CA FEB". This is essentially a bash script with an embedded gawk script as shown in the code. Line one identifies he file as a bash shell script. I have placed many comment in the code itselt to help explain how I wrote the file. Since this is a bash script $1 and $2 are used as the 1st and 2nd arguments provided in the command prompt. We first make the field seperation to be tab delimited, then we loop though all the fields in the header of the file (line 1) to determine which month the user is interesed in and store that as the field to use for summing up values and then averaging. We then computer the average as we do in ex2.awk program and print the value to the user in a presentable format. This script also has little error handling so if the Month is not correctly provided, the console is returned an error message. At the end we close the embedded gawk file and place the name of the txt file that we wish to do the computation on, provided that this file is locationed in our current directory.    

@@ -1,0 +1,16 @@
+Aakrit Prasad
+
+To run both programs type 'make' to create them
+
+To run the producer program simply type 'producer'
+	you can type a key for the shared memory as argv[1]
+		this should match the key for the consumer
+	if you don't type one a default used will be provided
+To run the consumer program simply type 'consumer'
+	you can type a key for the shared memory as argv[1]
+		this should match the key for the producer
+	if you don't type one a default used will be provided
+
+Then follow the commands provided by the program to use it
+
+Thank you

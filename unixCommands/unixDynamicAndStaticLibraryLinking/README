@@ -1,0 +1,16 @@
+To create the static lib:
+
+$: make -f Makefile1
+
+
+To create the dynamic lib:
+
+$: make -f Makefile2
+
+Once you create the main file please run the command below to execute the main fucntion since this tells the OS to look for the shared lib in the current directory.
+
+$: LD_LIBRARY_PATH=. ./main
+
+
+
+There is a README_TESTING file that is a script showing the static and shared libraries working as expected

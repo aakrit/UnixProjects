@@ -1,0 +1,103 @@
+Aakrit - hw 1: #3
+
+Script started on Sun 13 Jan 2013 07:19:11 PM CST
+bash: //umask: No such file or directory
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ ls -ila ~mark/pub/51081
+total 1388
+531801 drwxr-xr-x 32 mark adjunct   4096 2012-05-01 07:37 [0m[01;34m.[0m
+447165 drwxr-xr-x 26 mark adjunct   4096 2012-06-01 09:01 [01;34m..[0m
+531803 drwxr-xr-x  3 mark adjunct   4096 2012-04-11 19:01 [01;34mawkdir[0m
+380145 -rwxr-xr-x  1 mark adjunct   6517 2002-07-06 12:57 [01;32mbash_history.2[0m
+531802 lrwxrwxrwx  1 mark adjunct     14 2008-04-28 13:30 [01;36mbash.history.lecture.2.txt[0m -> [01;32mbash_history.2[0m
+380144 -rwxr-xr-x  1 mark adjunct   4035 2002-07-29 08:07 [01;32mbash.history.lecture.5.txt[0m
+530103 drwxr-xr-x  2 mark adjunct   4096 2001-09-07 09:54 [01;34mbigedit[0m
+530104 drwxr-xr-x  4 mark adjunct   4096 2001-11-12 16:47 [01;34mbyteorder[0m
+380146 -rwxr-xr-x  1 mark adjunct    366 2001-09-07 09:54 [01;32mcars[0m
+530107 drwxr-xr-x  2 mark adjunct   4096 2012-04-11 20:00 [01;34mcompiler[0m
+530108 drwxr-xr-x  3 mark adjunct   4096 2001-12-03 16:33 [01;34mcorba[0m
+530110 drwxr-xr-x  2 mark adjunct   4096 2010-10-13 20:01 [01;34mdebug[0m
+380147 -rwxr-xr-x  1 mark adjunct  12844 2001-09-07 09:54 [01;32mdiff1.txt[0m
+380148 -rwxr-xr-x  1 mark adjunct  12835 2001-09-07 09:54 [01;32mdiff2.txt[0m
+424310 drwxr-xr-x  2 mark adjunct   4096 2010-01-27 17:05 [01;34mdining.philosophers[0m
+380149 -rwxr-xr-x  1 mark adjunct   1000 2012-02-25 10:55 [01;32megrep.txt[0m
+380151 -rw-r--r--  1 mark adjunct     71 2003-10-13 18:31 filename.c
+380152 -rw-r--r--  1 mark adjunct   1635 2003-10-13 18:31 filename.c.rtl
+380153 -rw-r--r--  1 mark adjunct    768 2003-10-13 18:31 filename.o
+380150 -rwxr-xr-x  1 mark adjunct     26 2007-09-24 20:14 [01;32mfile.out[0m
+239674 drwx------  3 mark adjunct   4096 2010-02-01 10:05 [01;34mfinal.exam.live[0m
+380154 -rwxr-xr-x  1 mark adjunct 151930 2001-09-07 09:54 [01;32mgnu.emacs.faq[0m
+380155 -rwxr-xr-x  1 mark adjunct 153150 2001-09-07 09:54 [01;32mgnu.emacs.faq.mod[0m
+380156 -rwxr-xr-x  1 mark adjunct    214 2001-09-30 17:32 [01;32mgres[0m
+530113 drwxr-xr-x  3 mark adjunct   4096 2012-02-25 14:00 [01;34mheredoc[0m
+530115 drwxr-xr-x  2 mark adjunct   4096 2003-01-29 20:54 [01;34mhistories[0m
+380157 -rwxr-xr-x  1 mark adjunct  12862 2011-10-01 14:24 [01;32mhistory.of.unix.txt[0m
+380158 -rwxr-xr-x  1 mark adjunct  12843 2001-09-07 09:54 [01;32mhistory.of.unix.txt.bak[0m
+530116 drwxr-xr-x  2 mark adjunct   4096 2012-04-18 20:20 [01;34mio[0m
+380159 -rwxr-xr-x  1 mark adjunct   5248 2001-09-07 09:54 [01;32mjulian[0m
+380160 -rwxr-xr-x  1 mark adjunct   3427 2001-09-07 09:54 [01;32mlab2.instructions[0m
+208888 drwxr-xr-x  4 mark adjunct   4096 2012-04-05 13:56 [01;34mlectures[0m
+530117 drwxr-xr-x  2 mark adjunct   4096 2003-01-22 20:05 [01;34mlseek[0m
+380161 -rwxr-xr-x  1 mark adjunct    150 2001-09-07 09:54 [01;32mls.out[0m
+530118 drwxr-xr-x  9 mark adjunct   4096 2001-10-08 16:52 [01;34mmakefile.demo[0m
+314412 drwxr-xr-x  2 mark adjunct   4096 2012-05-16 17:42 [01;34mmessage.queues[0m
+148134 drwx------  2 mark adjunct   4096 2012-05-08 20:42 [01;34mmid.term.live[0m
+558222 lrwxrwxrwx  1 mark adjunct     14 2012-04-18 20:36 [01;36mmybigsymboliclink[0m -> [01;34m/home/mark/tmp[0m
+380162 -rwxr-xr-x  1 mark adjunct   5052 2003-01-21 08:34 [01;32mmycat[0m
+490392 -rwxr-xr-x  1 mark adjunct    197 2002-07-11 16:14 [01;32mmycat.c[0m
+490393 -rwxr-xr-x  1 mark adjunct      0 2001-09-07 09:54 [01;32mnew...file[0m
+490395 -rwxr-xr-x  1 mark adjunct      0 2001-09-07 09:54 [01;32mnewfile....[0m
+490394 -rwxr-xr-x  1 mark adjunct    165 2001-09-07 09:54 [01;32mnew.out[0m
+490396 -rwxr-xr-x  1 mark adjunct    200 2001-09-07 09:54 [01;32mnumbers[0m
+490402 -rwxr-xr-x  1 mark adjunct  94655 2001-09-07 09:54 [01;32moutput3[0m
+490397 -rwxr-xr-x  1 mark adjunct  94655 2001-09-07 09:54 [01;32moutput.a[0m
+490398 -rwxr-xr-x  1 mark adjunct  94655 2001-09-07 09:54 [01;32moutput.b[0m
+490399 -rwxr-xr-x  1 mark adjunct 283965 2001-09-07 09:54 [01;32moutput.big[0m
+490400 -rwxr-xr-x  1 mark adjunct  94655 2001-09-07 09:54 [01;32moutput.c[0m
+490401 -rwxr-xr-x  1 mark adjunct  94655 2001-09-07 09:54 [01;32moutput.txt[0m
+490403 -rwxr-xr-x  1 mark adjunct    491 2001-09-07 09:54 [01;32mpasswd2[0m
+314416 drwxr-xr-x  3 mark adjunct   4096 2012-05-09 19:07 [01;34mpipes[0m
+314418 drwxr-xr-x  3 mark adjunct   4096 2012-04-28 11:56 [01;34mprocesses[0m
+490404 -rwxr-xr-x  1 mark adjunct   3957 2001-09-07 09:54 [01;32mregex.txt[0m
+314420 drwxr-xr-x  4 mark adjunct   4096 2012-06-06 19:05 [01;34mrpc[0m
+314429 drwxr-xr-x  2 mark adjunct   4096 2001-09-07 12:09 [01;34mseddir[0m
+314430 drwxr-xr-x  5 mark adjunct   4096 2006-11-20 20:16 [01;34msemaphores[0m
+321510 drwxr-xr-x  2 mark adjunct   4096 2012-04-18 19:45 [01;34mshared.library[0m
+321514 drwxr-xr-x  4 mark adjunct   4096 2002-08-08 16:56 [01;34mshared.memory[0m
+321517 drwxr-xr-x  4 mark adjunct   4096 2001-09-07 14:40 [01;34mshell[0m
+490405 -rwxr-xr-x  1 mark adjunct    475 2001-10-01 09:08 [01;32mshowmatch[0m
+321520 drwxr-xr-x  2 mark adjunct   4096 2010-10-20 17:03 [01;34msignals[0m
+321521 drwxr-xr-x  4 mark adjunct   4096 2003-11-30 05:11 [01;34msockets[0m
+490407 -rwxr-xr-x  1 mark adjunct    284 2001-09-07 09:54 [01;32msort2.txt[0m
+490408 -rwxr-xr-x  1 mark adjunct    327 2001-09-07 09:54 [01;32msort3.txt[0m
+490406 -rwxr-xr-x  1 mark adjunct    477 2001-09-07 09:54 [01;32msort.txt[0m
+321525 drwxr-xr-x  2 mark adjunct   4096 2012-04-18 19:41 [01;34mstatic.library[0m
+490409 -rwxr-xr-x  1 mark adjunct      8 2001-09-07 09:54 [01;32msubit.sed[0m
+321526 drwxr-xr-x  2 mark adjunct   4096 2003-01-08 20:16 [01;34mtestdir[0m
+321527 drwxr-xr-x  6 mark adjunct   4096 2005-11-28 19:15 [01;34mthreads[0m
+380142 drwxr-xr-x  2 mark adjunct   4096 2007-10-08 17:53 [01;34mtmp[0m
+490410 -rwxr-xr-x  1 mark adjunct    772 2001-09-07 09:54 [01;32muniq.txt[0m
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ sata[K[K[K[Kls -ila ~mark/pub/51081[1P ~mark/pub/51081[1P ~mark/pub/51081[1P ~mark/pub/51081[1P ~mark/pub/51081[1P~mark/pub/51081[1P ~mark/pub/51081[1P ~mark/pub/51081s ~mark/pub/51081t ~mark/pub/51081a ~mark/pub/51081t ~mark/pub/51081
+  File: `/home/mark/pub/51081'
+  Size: 4096      	Blocks: 8          IO Block: 65536  directory
+Device: 1ah/26d	Inode: 531801      Links: 32
+Access: (0755/drwxr-xr-x)  Uid: (10005/    mark)   Gid: (10390/ adjunct)
+Access: 2013-01-13 19:19:35.892232000 -0600
+Modify: 2012-05-01 07:37:42.885612000 -0500
+Change: 2012-06-07 13:33:32.344247000 -0500
+
+
+From the ls and stat command on professors Mark's pub directory for the class we can see that the directory contains several hard_link files, soft_link files, executable files, regular C non executable files and directories. The ls command can also tell us information about each such files suchas permissions for the owners, groups, others, the files pid (process id), links, owner name, size, and modify time. 
+
+The stat command shows us the files(directory in this case althought eveything in unix is a file) size (4096 - empty folder size), links to file (32), inode (531801), permissions for owner (rwx), groups(rx), others(rx), UID (user id: 10005 under mark) GID (group id: 10390 under adjunct) each with name, the time the file was accessed, modified and changed. 
+
+
+
+
+
+
+
+
+aakrit@rockwell:~/cspp51081/labs/lab1/aakrit.introlab$ exit
+exit
+
+Script done on Sun 13 Jan 2013 07:19:45 PM CST

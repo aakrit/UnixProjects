@@ -1,0 +1,32 @@
+#!/bin/sh
+
+pattern="$1"; shift
+
+if [ $# -eq 1 ];
+then
+gawk '
+{
+	if (match($0, pattern))
+	{
+		print
+		patmatch = ""
+		for( k = 1; k <= RLENGTH; k++)
+			patmatch = patmatch "^"
+		printf("%"RSTART-1"s" "%-s\n","", patmatch)
+	}
+}' pattern="$pattern" $*
+else  # input from stdin
+gawk '
+{
+	if (match($0, pattern))
+	{
+		print
+		patmatch = ""
+		for( k = 1; k <= RLENGTH; k++)
+			patmatch = patmatch "^"
+		printf("%"RSTART-1"s" "%-s\n","", patmatch)
+	}
+}' pattern="$pattern" <&0
+fi
+
+
